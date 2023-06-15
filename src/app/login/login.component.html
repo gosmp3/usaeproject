@@ -1,0 +1,22 @@
+<div *ngIf="isLoggedIn" class="admin-content">
+    <h3>Bienvenido, Administrador</h3>
+    <!-- Otros elementos del administrador -->
+  </div>
+  
+  <div class="container">
+    <form class="form" (ngSubmit)="login()">
+      <!-- Campos de entrada de usuario y contraseña -->
+      <div>
+        <label for="username">Usuario:</label>
+        <input type="text" id="username" [(ngModel)]="username" name="username" required class="input-field">
+      </div>
+      <div>
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" [(ngModel)]="password" name="password" required class="input-field">
+      </div>
+  
+      <!-- Botón de inicio de sesión -->
+      <button type="submit">Iniciar sesión</button>
+    </form>
+  </div>
+  

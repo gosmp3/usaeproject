@@ -1,0 +1,15 @@
+.error {
+    font-size: small;
+    margin: 0 0 0 3px;
+    color: rgb(233, 21, 21);
+}
+
+.error2 {
+    font-size: small;
+    margin: 0 0 0 3px;
+    color: rgb(233, 21, 21);
+}
+
+.escondido {
+    display: none;
+}
