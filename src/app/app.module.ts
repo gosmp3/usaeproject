@@ -17,6 +17,7 @@ import { LoginComponent } from './login/login.component';
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { AuthModule } from '@auth0/auth0-angular';
     HeaderComponent,
     FooterComponent,
     Form2Component,
-    LoginComponent
+    LoginComponent,
+    AdminViewComponent
   ],
   imports: [
     BrowserModule,
