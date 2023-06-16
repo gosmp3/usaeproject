@@ -13,11 +13,10 @@ import { Form2Component } from './form2/form2.component';
 import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
-import { LoginComponent } from './login/login.component';
+
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
-
 
 @NgModule({
   declarations: [
@@ -25,7 +24,6 @@ import { AuthModule } from '@auth0/auth0-angular';
     HeaderComponent,
     FooterComponent,
     Form2Component,
-    LoginComponent
   ],
   imports: [
     BrowserModule,
