@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 // Import the module from the SDK
 import { AuthModule } from '@auth0/auth0-angular';
+import { AdminViewComponent } from './admin-view/admin-view.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AuthModule } from '@auth0/auth0-angular';
     HeaderComponent,
     FooterComponent,
     Form2Component,
+    AdminViewComponent
   ],
   imports: [
     BrowserModule,
