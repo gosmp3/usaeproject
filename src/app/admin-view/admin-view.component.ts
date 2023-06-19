@@ -63,13 +63,15 @@ puntajeAnios: number[] = new Array(28).fill(0);
   this.getCursos();
    }
 
-  addCursos(form: NgForm) {
+   addCursos(form: NgForm) {
     if (form.value.cursosId) {
       this.cursosService.putCursos(form.value);
     } else {
       this.cursosService.postCursos(form.value);
     }
+    this.resetForm(form);
   }
+  
   
   getCursos() {
     return this.cursosService.getCursos();
@@ -84,15 +86,13 @@ puntajeAnios: number[] = new Array(28).fill(0);
       this.cursosService.deleteCursos(cursosId);
     }
   }
-  
-  resetForm(form?: NgForm){
+
+  resetForm(form?: NgForm) {
     if (form) {
-      form.reset();
-      this.cursosService.selectedCursos = new Cursos();
+      form.resetForm();
     }
-
   }
-
+  
 
   getTotalCursos(): number {
     let totalCursos = 0;

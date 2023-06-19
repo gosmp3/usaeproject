@@ -33,8 +33,14 @@
   <div class="col-md-4">
     <label for="etapaLetra" class="form-label"><strong>Etapa con letra: &nbsp;</strong></label>
     <input id="etapaLetra" type="text" name="etapaLetra">
-  </div>
+  </div>  
 </div>
+
+<div class="col-md-5">
+  <label for="municipio" class="form-label"><strong>Fecha límite de entrega: &nbsp;</strong></label>
+  <input id="municipio" type="text" name="municipio" placeholder="27 de enero de 2024">
+</div>
+
 
 <!-- INICIO ANTIGÜEDAD EN EL SERVICIO-->
 
@@ -278,8 +284,7 @@
             </div>
             <div class="card-action mt-4" style="display: flex; flex-direction: column; align-items: center;">
               <div class="input-fiel col s12">
-                <button>Guardar </button>&nbsp;&nbsp;
-                <button (click)="resetForm(cursosForm)">Limpiar</button>
+                <button>Guardar </button>
               </div>
             </div>
           </div>

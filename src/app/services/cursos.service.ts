@@ -36,8 +36,8 @@ export class CursosService {
     return { success: false }; // Simulamos una respuesta de error
   }
 
-  deleteCursos(_id: string) {
-    const index = this.findIndexById(_id);
+  deleteCursos(cursosId: string) {
+    const index = this.findIndexById(cursosId);
     if (index !== -1) {
       this.cursos.splice(index, 1); // Eliminamos el cursos del arreglo local
       return { success: true }; // Simulamos una respuesta exitosa
