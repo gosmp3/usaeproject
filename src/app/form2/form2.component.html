@@ -92,16 +92,16 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <label for="nombreevaluador" class="form-label"><strong>Nombre del evaluador</strong> (Jefe inmediato del personal
-        enviado)</label>
+        evaluado)</label>
       <input id="nombreEvaluador" type="text" name="nombreevaluador" [(ngModel)]="form.evaluador" class="form-control"
         (change)="evaluar();">
       <p class="error escondido">Este apartado es necesario para continuar</p>
     </div>
     <div class="col-md-6">
-      <label for="currentDate" class="form-label"><strong>Fecha</strong></label>
-      <input type="text" name="currentDtae" [(ngModel)]="fechaFormateada" class="form-control" readonly
-        (change)="evaluar();">
-    </div>
+  <label for="fecha" class="form-label"><strong>Fecha</strong></label>
+  <input type="date" name="fecha" [(ngModel)]="fechaFormateada" class="form-control" (change)="evaluar();">
+</div>
+
   </div>
 
   <div class="row mb-3">
@@ -429,13 +429,11 @@
     <table class="table table-bordered text-center">
       <tbody>
         <tr>
-          <th scope="col" class="col-3" style="font-weight: normal;"><strong>Factor de Desempeño = </strong>Puntaje
-            obtenido en el desempeño laboral entre / los 365 días del año.</th>
-          <th scope="col" class="col-1" style="font-weight: normal; color: #b40707;"><strong>Factor de
-              Desempeño=</strong>
-          </th>
-          <th scope="col" class="col-2" style="font-weight: normal; color: #b40707;"><strong>{{desempeno}}</strong></th>
+          <th scope="col" class="col-3" style="font-weight: normal;"><strong>Factor de Desempeño = </strong>Puntaje obtenido en el desempeño laboral entre / los 365 días del año.</th>
+          <th scope="col" class="col-1" style="font-weight: normal; color: #b40707;"><strong>Factor de Desempeño=</strong></th>
+          <th scope="col" class="col-2" style="font-weight: normal; color: #b40707;"><strong>{{ desempeno }}</strong></th>
         </tr>
+        
         <tr>
           <th scope="col" class="col-3" style="font-weight: normal;">Los días laborados son los 365 días del año, y no
             se computarán las licencias sin goce de sueldo por asuntos particulares o por comisión sindical. Además, en
@@ -451,11 +449,10 @@
         </tr>
         <tr>
           <th scope="col" class="col-3" style="font-weight: normal;"><strong>
-              Total de puntaje de evaluación al desempeño laboral = </strong>(Factor de Desempeño) <strong>X</strong>
-            (los días laborados
-            sólo en la plaza administrativa del periodo evaluado)</th>
-          <th scope="col" class="col-1" style="font-weight: normal; color: #b40707;"><strong>Total de puntaje de
-              evaluación al desempeño laboral=</strong>
+            Total de puntaje de evaluación al desempeño laboral = </strong>(Factor de Desempeño) <strong>X</strong>
+            (los días laborados sólo en la plaza administrativa del periodo evaluado)</th>
+          <th scope="col" class="col-1" style="font-weight: normal; color: #b40707;">
+            <strong>Total de puntaje de evaluación al desempeño laboral=</strong>
           </th>
           <th scope="col" class="col-2" style="font-weight: normal; color: #b40707;">
             <strong>{{multiPuntajeyDias}}</strong>

@@ -13,33 +13,38 @@
 <div class="row mb-3">
   <div class="col-md-4">
     <label for="anio" class="form-label"><strong>Año: &nbsp;</strong></label>
-    <input id="anio" type="text" name="anio">
+    <input id="anio" type="text" name="anio" class="form-control border-dark">
   </div>
   <div class="col-md-4">
     <label for="periodo" class="form-label"><strong>Periodo evaluado: &nbsp;</strong></label>
-    <input id="periodo" type="text" name="periodo">
+    <input id="periodo" type="text" name="periodo" class="form-control border-dark">
   </div>
   <div class="col-md-4">
     <label for="municipio" class="form-label"><strong>Municipio: &nbsp;</strong></label>
-    <input id="municipio" type="text" name="municipio">
+    <input id="municipio" type="text" name="municipio" class="form-control border-dark">
   </div>
 </div>
+
+
 
 <div class="row mb-3">
   <div class="col-md-4">
     <label for="etapa" class="form-label"><strong>Etapa: &nbsp;</strong></label>
-    <input id="etapa" type="text" name="etapa">
+    <input id="etapa" type="text" name="etapa" class="form-control border-dark">
   </div>
   <div class="col-md-4">
     <label for="etapaLetra" class="form-label"><strong>Etapa con letra: &nbsp;</strong></label>
-    <input id="etapaLetra" type="text" name="etapaLetra">
-  </div>  
+    <input id="etapaLetra" type="text" name="etapaLetra" class="form-control border-dark">
+  </div>
 </div>
 
-<div class="col-md-5">
-  <label for="municipio" class="form-label"><strong>Fecha límite de entrega: &nbsp;</strong></label>
-  <input id="municipio" type="text" name="municipio" placeholder="27 de enero de 2024">
+<div class="row mb-3">
+  <div class="col-md-5">
+    <label for="fechaLimite" class="form-label"><strong>Fecha límite de entrega: &nbsp;</strong></label>
+    <input id="fechaLimite" type="text" name="fechaLimite" class="form-control border-dark" placeholder="27 de enero de 2024">
+  </div>
 </div>
+
 
 
 <!-- INICIO ANTIGÜEDAD EN EL SERVICIO-->
@@ -270,18 +275,22 @@
           <input type="hidden" name="cursosId" #cursosId="ngModel" [(ngModel)]="cursosService.selectedCursos.cursosId">
           <h5 style="display: flex; flex-direction: column; align-items: center;">Añadir curso</h5>
           <div class="row mt-4">
-            <div class="input-field">
-              <label for="nombreCurso" class="form-label"><strong>Nombre: &nbsp;</strong></label>
-              <input type="text" name="nombreCurso" #name="ngModel" style="width: 80%;" 
-              [(ngModel)]="cursosService.selectedCursos.nombreCurso"
-              placeholder="Ingresa nombre del curso">
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="nombreCurso" class="form-label"><strong>Nombre: &nbsp;</strong></label>
+                <input type="text" name="nombreCurso" #name="ngModel" class="form-control border-dark"
+                  [(ngModel)]="cursosService.selectedCursos.nombreCurso" placeholder="Ingresa nombre del curso">
+              </div>
             </div>
-            <div class="input-field">
-              <label for="puntaje" class="form-label"><strong>Puntaje: &nbsp;</strong></label>
-                <input type="text" name="puntaje" #name="ngModel" 
-                [(ngModel)]="cursosService.selectedCursos.puntaje"
-                placeholder="Ingresa puntaje del curso">
+            
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="puntaje" class="form-label"><strong>Puntaje: &nbsp;</strong></label>
+                <input type="text" name="puntaje" #name="ngModel" class="form-control border-dark"
+                  [(ngModel)]="cursosService.selectedCursos.puntaje" placeholder="Ingresa puntaje del curso">
+              </div>
             </div>
+            
             <div class="card-action mt-4" style="display: flex; flex-direction: column; align-items: center;">
               <div class="input-fiel col s12">
                 <button>Guardar </button>

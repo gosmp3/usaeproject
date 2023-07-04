@@ -45,6 +45,7 @@ export class Form2Component implements OnInit {
   fechaFormateada = `${this.dia.toString().padStart(2, '0')}/${this.mes
     .toString()
     .padStart(2, '0')}/${this.anio}`;
+ 
 
   constructor(private toastr: ToastrService) {
     // Obtiene el año actual del sistema
@@ -55,6 +56,8 @@ export class Form2Component implements OnInit {
     const storedData = localStorage.getItem('registros');
     // Si hay datos almacenados, conviértelos de nuevo a un objeto o matriz JSON
     this.registros = storedData ? JSON.parse(storedData) : [];
+
+  
 
     this.form = {
       etapa: '',
@@ -501,25 +504,26 @@ export class Form2Component implements OnInit {
   calcularSumaPuntajes(): void {
     this.sumaPuntaje = this.form.puntajeComp.reduce((a, b) => a + Number(b), 0);
     this.desempeno = this.sumaPuntaje / 365;
-    this.multiPuntajeyDias = this.desempeno * this.form.dias;
+   this.multiPuntajeyDias = Math.floor(this.desempeno * this.form.dias * 100) / 100;
   }
 
   sumarTodo(): void {
     this.form.tt =
-      Number(this.multiPuntajeyDias) +
+    this.multiPuntajeyDias +
       Number(this.antiguedad) +
       Number(this.academico) +
       Number(this.form.cursos);
     this.resultt = this.form.tt.toFixed(2);
   }
 
-  findKey(): void {
-    this.centros.forEach((data) => {
-      if (data.centro_de_trabajo === this.form.centrotrabajo) {
-        this.form.clavecentro = data.clave_de_centro;
-      }
-    });
-  }
+findKey(): void {
+  this.centros.forEach((data) => {
+    if (data.centro_de_trabajo === this.form.centrotrabajo) {
+      this.form.clavecentro = data.clave_de_centro;
+    }
+  });
+}
+
 
   async generatePDF(): Promise<void> {
     const existingPdfBytes = await fetch(
